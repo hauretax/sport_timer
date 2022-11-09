@@ -24,10 +24,11 @@ class _SelectNbrState extends State<SelectNbr> {
             child: IconButton(
                 onPressed: () {
                   if (tmp.text == "0") {
-                  } else
+                  } else {
                     tmp.text = (int.parse(tmp.text) - 1).toString();
+                  }
                 },
-                icon: Icon(Icons.remove))),
+                icon: const Icon(Icons.remove))),
         SizedBox(
             width: 43,
             height: 43,
@@ -40,10 +41,10 @@ class _SelectNbrState extends State<SelectNbr> {
                   FilteringTextInputFormatter.digitsOnly,
                   NumericalRangeFormatter(min: 0, max: 99),
                 ],
-                decoration: InputDecoration(border: InputBorder.none),
+                decoration: const InputDecoration(border: InputBorder.none),
                 textAlign: TextAlign.center,
                 textAlignVertical: TextAlignVertical.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 22,
                   height: 43,
                 ),
@@ -58,10 +59,11 @@ class _SelectNbrState extends State<SelectNbr> {
             child: IconButton(
                 onPressed: () {
                   if (tmp.text == "99") {
-                  } else
+                  } else {
                     tmp.text = (int.parse(tmp.text) + 1).toString();
+                  }
                 },
-                icon: Icon(Icons.add))),
+                icon: const Icon(Icons.add))),
       ],
     );
   }

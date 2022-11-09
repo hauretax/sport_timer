@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sport_timer/elements/atoms/Selectnbr.dart';
 import 'package:sport_timer/elements/sticker.dart';
 import 'package:sport_timer/screens/setupForms.dart';
 
@@ -53,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             SetupForm(test: _incrementCounter),
-            Sticker(),
+            const Sticker(),
   
           ],
         ),

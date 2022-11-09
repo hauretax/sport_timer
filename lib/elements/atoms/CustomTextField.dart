@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CustomTextField extends StatefulWidget {
   String hintText;
@@ -28,10 +26,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
       child: TextField(
         decoration: InputDecoration(
           hintText: widget.hintText,
-          contentPadding: EdgeInsets.all(10.0),
+          contentPadding: const EdgeInsets.all(10.0),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0),
-            borderSide: BorderSide(color: Colors.white, width: 3.0),
+            borderSide: const BorderSide(color: Colors.white, width: 3.0),
           ),
         ),
 

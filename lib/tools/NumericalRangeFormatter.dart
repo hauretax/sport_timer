@@ -1,12 +1,5 @@
 import 'package:flutter/services.dart';
 
-bool _isNumeric(String str) {
-  if (str == null) {
-    return false;
-  }
-  return double.tryParse(str) != null;
-}
-
 class NumericalRangeFormatter extends TextInputFormatter {
   final double min;
   final double max;
@@ -21,7 +14,7 @@ class NumericalRangeFormatter extends TextInputFormatter {
     if (newValue.text == '') {
       return newValue;
     }else if (int.parse(newValue.text) < min) {
-      return TextEditingValue().copyWith(text: min.toStringAsFixed(2));
+      return const TextEditingValue().copyWith(text: min.toStringAsFixed(2));
     } else {
       return int.parse(newValue.text) > max ? oldValue : newValue;
     }

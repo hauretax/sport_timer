@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SetupForm extends StatefulWidget {
@@ -37,10 +36,10 @@ class _SetupForm extends State<SetupForm> {
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'who many seconde ?',
-                contentPadding: EdgeInsets.all(10.0),
+                contentPadding:const EdgeInsets.all(10.0),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15.0),
-                  borderSide: BorderSide(color: Colors.white, width: 3.0),
+                  borderSide:const BorderSide(color: Colors.white, width: 3.0),
                 ),
               ),
 
