@@ -23,18 +23,20 @@ class _SelectNbrState extends State<SelectNbr> {
             ),
             child: IconButton(
                 onPressed: () {
-                  if (tmp.text == "0") {
+                  if (tmp.text == "") {
+                    tmp.text = '0';
+                  } else if (tmp.text == "0") {
                   } else {
                     tmp.text = (int.parse(tmp.text) - 1).toString();
                   }
                 },
                 icon: const Icon(Icons.remove))),
         SizedBox(
-            width: 43,
-            height: 43,
+            width: 42,
+            height: 42,
             child: Container(
               decoration: BoxDecoration(
-                border: Border.all(),
+                border: Border.symmetric(horizontal: BorderSide(width: 1)),
               ),
               child: TextField(
                 inputFormatters: [
@@ -58,12 +60,15 @@ class _SelectNbrState extends State<SelectNbr> {
             ),
             child: IconButton(
                 onPressed: () {
-                  if (tmp.text == "99") {
+                  if (tmp.text == "") {
+                    tmp.text = '1';
+                  } else if (tmp.text == "99") {
                   } else {
                     tmp.text = (int.parse(tmp.text) + 1).toString();
                   }
                 },
                 icon: const Icon(Icons.add))),
+                
       ],
     );
   }

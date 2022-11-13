@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sport_timer/elements/CircleAnimation.dart';
 import 'package:sport_timer/elements/sticker.dart';
 import 'package:sport_timer/screens/setupForms.dart';
 
@@ -45,15 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
         child: Column(
           children: [
             SetupForm(test: _incrementCounter),
             const Sticker(),
-  
+            CircleAnimation(scd: 4,),
           ],
         ),
       ),
