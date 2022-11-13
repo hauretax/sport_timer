@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'atoms/Selectnbr.dart';
 
 class Sticker extends StatefulWidget {
-  const Sticker({super.key});
+  TextEditingController superNb;
+  Sticker({super.key, required this.superNb});
 
   @override
   State<Sticker> createState() => _StickerState();
@@ -40,9 +41,9 @@ class _StickerState extends State<Sticker> {
                 )
               ],
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 10, 10),
-              child: SelectNbr(),
+              child: SelectNbr(selectedNb: widget.superNb),
             )
           ],
         ),

@@ -9,13 +9,13 @@ final player = AudioPlayer();
 
 playsound() async {
   await player.setSource(AssetSource('sounds/extralife.wav'));
-   print(await player.getDuration());
+  await player.resume();
 }
 
 class CircleAnimation extends StatefulWidget {
   int scd;
-  int repeat;
-  CircleAnimation({super.key, required this.scd, this.repeat = 1});
+  int round;
+  CircleAnimation({super.key, required this.scd, this.round = 1});
 
   @override
   State<CircleAnimation> createState() => _CircleAnimationState();
@@ -40,12 +40,12 @@ class _CircleAnimationState extends State<CircleAnimation>
       vsync: this,
     );
     _controller.addListener(() {
-      playsound();
       setState(() {
         dataMap['a'] = 000 + (_controller.value * 100.0);
         dataMap['b'] = 100 - (_controller.value * 100.0);
       });
-      if (_controller.value == 1 && widget.repeat != x) {
+      if (_controller.value == 1 && widget.round != x) {
+        playsound();
         x++;
         _controller.value = 0;
         _controller.forward();

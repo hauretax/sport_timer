@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_timer/elements/CircleAnimation.dart';
 import 'package:sport_timer/elements/sticker.dart';
+import 'package:sport_timer/screens/NewSession.dart';
 import 'package:sport_timer/screens/setupForms.dart';
 
 void main() {
@@ -18,43 +19,43 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'super chrono'),
+      home: const NewSession()  ,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key, required this.title});
 
-  final String title;
+//   final String title;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+// class _MyHomePageState extends State<MyHomePage> {
 
-  void _incrementCounter(a, b) {
-    setState(() {
-      _counter++;
-    });
-    print(a);
-    print(b);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            SetupForm(test: _incrementCounter),
-            const Sticker(),
-            CircleAnimation(scd: 4,),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Column(
+//           children: [
+//             const Sticker(),
+//             CircleAnimation(scd: 4, repeat: 0),
+            // TextButton(
+            //   onPressed: () {
+            //     Navigator.of(context).push(
+            //       MaterialPageRoute(
+            //         builder: (context) => const NewSession(),
+            //       ),
+            //     );
+            //   },
+            //   child: Text('asd'),
+//             )
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

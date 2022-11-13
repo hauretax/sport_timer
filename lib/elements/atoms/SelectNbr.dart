@@ -3,17 +3,19 @@ import 'package:flutter/services.dart';
 import 'package:sport_timer/tools/NumericalRangeFormatter.dart';
 
 class SelectNbr extends StatefulWidget {
-  const SelectNbr({super.key});
+  TextEditingController selectedNb;
+  SelectNbr({super.key, required this.selectedNb});
 
   @override
   State<SelectNbr> createState() => _SelectNbrState();
 }
 
 class _SelectNbrState extends State<SelectNbr> {
-  var tmp = TextEditingController(text: '0');
+  
 
   @override
   Widget build(BuildContext context) {
+    final tmp = widget.selectedNb;
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
@@ -68,7 +70,6 @@ class _SelectNbrState extends State<SelectNbr> {
                   }
                 },
                 icon: const Icon(Icons.add))),
-                
       ],
     );
   }
