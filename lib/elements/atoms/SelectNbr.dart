@@ -43,7 +43,7 @@ class _SelectNbrState extends State<SelectNbr> {
               child: TextField(
                 inputFormatters: [
                   FilteringTextInputFormatter.digitsOnly,
-                  NumericalRangeFormatter(min: 0, max: 99),
+                  NumericalRangeFormatter(min: 0, max: 999),
                 ],
                 decoration: const InputDecoration(border: InputBorder.none),
                 textAlign: TextAlign.center,
@@ -64,7 +64,7 @@ class _SelectNbrState extends State<SelectNbr> {
                 onPressed: () {
                   if (tmp.text == "") {
                     tmp.text = '1';
-                  } else if (tmp.text == "99") {
+                  } else if (tmp.text == "999") {
                   } else {
                     tmp.text = (int.parse(tmp.text) + 1).toString();
                   }

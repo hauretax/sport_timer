@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'sport timer',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -23,39 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// class MyHomePage extends StatefulWidget {
-//   const MyHomePage({super.key, required this.title});
-
-//   final String title;
-
-//   @override
-//   State<MyHomePage> createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: Column(
-//           children: [
-//             const Sticker(),
-//             CircleAnimation(scd: 4, repeat: 0),
-            // TextButton(
-            //   onPressed: () {
-            //     Navigator.of(context).push(
-            //       MaterialPageRoute(
-            //         builder: (context) => const NewSession(),
-            //       ),
-            //     );
-            //   },
-            //   child: Text('asd'),
-//             )
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }

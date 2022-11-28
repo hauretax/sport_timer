@@ -1,4 +1,5 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:bordered_text/bordered_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -47,8 +48,10 @@ class _CircleAnimationState extends State<CircleAnimation>
       if (_controller.value == 1 && widget.round != x) {
         playsound();
         x++;
-        _controller.value = 0;
-        _controller.forward();
+        if (widget.round != x) {
+          _controller.value = 0;
+          _controller.forward();
+        }
       }
     });
     _controller.forward();
@@ -64,15 +67,29 @@ class _CircleAnimationState extends State<CircleAnimation>
   Widget build(BuildContext context) {
     int percent = (_controller.value * 100.0).round();
     return Container(
-      child: SizedBox(
-        width: 100,
-        child: PieChart(
-          dataMap: dataMap,
-          animationDuration: Duration(milliseconds: 0),
-          colorList: [Colors.white, Colors.red],
-          legendOptions: const LegendOptions(showLegends: false),
-          chartValuesOptions: const ChartValuesOptions(showChartValues: false),
-        ),
+      child: Stack(
+        children: [
+          PieChart(
+            dataMap: dataMap,
+            animationDuration: Duration(milliseconds: 0),
+            colorList: [Colors.white, Colors.red],
+            legendOptions: const LegendOptions(showLegends: false),
+            chartValuesOptions:
+                const ChartValuesOptions(showChartValues: false),
+          ),
+          Positioned.fill(
+            child: Align(
+              child: BorderedText(
+                child: Text(
+                    style: TextStyle(
+                      color: Colors.white,
+                      decoration: TextDecoration.none,
+                    ),
+                    x.toString()),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

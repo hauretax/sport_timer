@@ -15,9 +15,15 @@ class _TimerScreenState extends State<TimerScreen> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        CircleAnimation(scd: widget.scdPerRound, round: widget.nbRound),
-                TextButton(
+        SizedBox(
+          //#todo: find way to give correcte space
+          height: MediaQuery.of(context).size.height - 40,
+          child:
+              CircleAnimation(scd: widget.scdPerRound, round: widget.nbRound),
+        ),
+        TextButton(
           onPressed: () {
             Navigator.maybePop(context);
           },
